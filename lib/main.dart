@@ -120,12 +120,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'CCR_Lab_Plus',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+
       home: MyHomePage(title: 'CCR_Lab_Plus'),
     );
   }
@@ -320,7 +315,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   time1 = time;
       // }
       f.writeAsString(
-          "uname,date,time,lat,long,altitude,speed,ax,ay,az,gx,gy,gz" + '\n',
+          "uname,date,time,lat,long,altitude,velocity,ax,ay,az,gx,gy,gz" + '\n',
           mode: FileMode.append,
           flush: true);
       // for (int i = 0; i < 1000; i++) {}
@@ -1826,8 +1821,6 @@ Future<void> bt_data_upload(path) async {
 
 
 Future<void> gps_data_upload(path) async {
-  // var bytes=path.readAsBytesSync();
-  // var postUri = Uri.http('http://13.229.160.192:5000', '/file-upload');
 
   var postUri = Uri.parse('http://52.74.221.135:5000/upload_sensor');
 
