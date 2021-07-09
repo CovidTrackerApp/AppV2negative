@@ -120,7 +120,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
+    return MaterialApp(
+      title: 'CCR_Lab_Plus',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: MyHomePage(title: 'CCR_Lab_Plus'),
     );
   }
