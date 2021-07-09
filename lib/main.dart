@@ -263,9 +263,10 @@ class _MyHomePageState extends State<MyHomePage> {
         String date = formatter.format(now);
         String speed = pinLocation.speed.toStringAsFixed(7);
 
+
         if (time != time1) {
           f.writeAsString(
-              "$usey,$date,$time,$latt,$longg,$altt,$speed ,$accelerometer,$gyroscope" +
+              "$usey,$date,$time,$latt,$longg,$altt,${speed},${accelerometer[0]},${accelerometer[1]},${accelerometer[2]},${gyroscope[0]},${gyroscope[1]}${gyroscope[2]}" +
                   '\n',
               mode: FileMode.append,
               flush: true);
@@ -286,9 +287,10 @@ class _MyHomePageState extends State<MyHomePage> {
         String time = DateFormat('Hms').format(now);
         String date = formatter.format(now);
         String speed = pinLocation.speed.toStringAsFixed(7);
+
         if (time1 != time) {
           f.writeAsString(
-              "$usey,$date,$time,$latt,$longg,$altt,$speed,$accelerometer,$gyroscope" +
+              "$usey,$date,$time,$latt,$longg,$altt,${speed},${accelerometer[0]},${accelerometer[1]},${accelerometer[2]},${gyroscope[0]},${gyroscope[1]},${gyroscope[2]}" +
                   '\n',
               mode: FileMode.append,
               flush: true);
@@ -318,7 +320,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   time1 = time;
       // }
       f.writeAsString(
-          "uname,date,time,distance,lat,long,altitude,ax,ay,az,gx,gy,gz" + '\n',
+          "uname,date,time,lat,long,altitude,speed,ax,ay,az,gx,gy,gz" + '\n',
           mode: FileMode.append,
           flush: true);
       // for (int i = 0; i < 1000; i++) {}
